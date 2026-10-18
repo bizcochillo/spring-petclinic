@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'github.com/bizcochillo/spring-petclinic.git' 
-    targetRevision: master
+    targetRevision: main
     path: gitops/manifests
   destination:
     server: 'https://kubernetes.default.svc' 
