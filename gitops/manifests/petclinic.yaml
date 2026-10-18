@@ -45,7 +45,7 @@ spec:
         app: petclinic
     spec:
       containers:
-        - name: workload
+        - name: petclinic
           image: image-registry.openshift-image-registry.svc:5000/demo-dockerfile/petclinic:a7fc560b-3a32-4ec3-acf2-acc63eb4bbc7
           env:
             - name: SPRING_PROFILES_ACTIVE
