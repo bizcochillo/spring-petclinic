@@ -1,11 +1,11 @@
-FROM registry.access.redhat.com/ubi9/openjdk-17:latest AS builder
+FROM registry.access.redhat.com/hi/openjdk:25.0.4-builder AS builder
 WORKDIR /opt/app
 
 COPY . .
 
 RUN ./mvnw clean package -DskipTests
 
-FROM registry.access.redhat.com/ubi9/jre-17-minimal:latest
+FROM registry.access.redhat.com/hi/openjdk:25.0.4-runtime
 WORKDIR /opt/app
 
 COPY --from=builder /opt/app/target/spring-petclinic-*.jar app.jar
