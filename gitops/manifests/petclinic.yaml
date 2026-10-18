@@ -62,11 +62,11 @@ spec:
               containerPort: 8080
           livenessProbe:
             httpGet:
-              path: /livez
+              path: /actuator/health/liveness
               port: http
           readinessProbe:
             httpGet:
-              path: /readyz
+              path: /actuator/health/readiness
               port: http
           volumeMounts:
             - mountPath: /bindings/secret
